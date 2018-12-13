@@ -9,7 +9,7 @@ import time
 import youtube_dl
 import json
 
-TOKEN = "NTIwNjY3MTA1NDk5MTUyMzg1.DuxM0Q.1PV1C2p76s-Yd1k99-waHYtn5Ok" 
+TOKEN = open("secret").read()
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "pls ")

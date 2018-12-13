@@ -43,7 +43,7 @@ class games:
 			if m2 == "Lizard":
 				return "\n%s humiliates %s" % (p2, p1)
 			else:
-				return "\n%s dead was a complete plot twist prepared by %s" % (p2, p1)
+				return "\n%s death was a complete plot twist prepared by %s" % (p2, p1)
 		else:
 			print("That's not a valid play. Check your spelling!")
 			
