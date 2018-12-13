@@ -4,6 +4,7 @@ from discord.ext import commands
 import asyncio
 import aiohttp
 from io import BytesIO
+import random
 import json
 
 
@@ -77,7 +78,37 @@ class games:
 		global already_playing
 		#playing against the bot
 		if (user.id == "520667105499152385"): 
-			await self.client.say("I don't know how to play rps yet... but I am learning!")
+			suker = ctx.message.author
+			
+			movs = ['Rock', 'Paper', 'Scissors']
+			msg2 = "So... you know how this goes: write `Rock`, `Paper`, `Scissors`."
+			
+			await self.client.say("I am super bad at this. Please have mersi :sob: ")
+			await self.client.say(msg2)
+			
+			m = await self.client.wait_for_message(author=suker, timeout=60)
+			if m == None:
+				await self.client.say("I am sad you gave up, %s" % (suker))
+			if m.content == "Rock":
+				await self.client.say("\n>%s uses Rock\n>Chain uses Paper\n" % (suker))
+				await self.client.say("`Chain wins`\nYaaay! I did it!")
+			elif m.content == "Paper":
+				await self.client.say("\n>%s uses Paper\n>Chain uses Scissors\n" % (suker))
+				await self.client.say("`Chain wins`\nWhat?! I did it...? Yess!")
+			elif m.content == "Scissors":
+				await self.client.say("\n>%s uses Scissors\n>Chain uses Rock\n" % (suker))
+				await self.client.say("`Chain wins`\nOh, I won? Something in my code must be wrong...")
+			elif m.content == "Spock":
+				await self.client.say("\n>%s uses Spock\n>Chain uses Lizard\n" % (suker))
+				await self.client.say("`Chain wins`\nThat was almost cheating from your part, luckily I did not fall for that.")
+			elif m.content == "Lizard":
+				await self.client.say("\n>%s uses Lizard\n>Chain uses %s\n" % (suker, random.choice(movs)))
+				await self.client.say("`Chain wins`\nBut I like Lizards. They are super cute!")
+			else:
+				await self.client.say("\n>%s uses '%s'\n>Chain uses Indifference\n" % (suker, m.content))
+				await self.client.say("%s was heavily hurt after being ignored by Chain.")
+			
+			
 			#she will play with you, dont worry.
 		
 		#caller against himself, maybe if you have split personality it could work...
@@ -152,9 +183,7 @@ class games:
 			
 				return
 			
-			await self.client.say("\n>%s uses %s" % (player1, m1.content))
-			await self.client.say(">%s uses %s\n" % (player2, m2.content))
-			
+			await self.client.say("\n>%s uses %s\n>%s uses %s\n" % (player1, m1.content, player2, m2.content ))
 		
 			win = self.winner(m1.content, m2.content, player1, player2)
 			await self.client.say(win)
