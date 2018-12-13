@@ -24,6 +24,20 @@ async def on_ready():
 	
 #FOR TESTING PURPOSES#
 @client.command(pass_context=True)
+async def announcement(ctx, *args):
+	if ctx.message.author.id  == '424221454490402816':
+		announcement = ''
+		for word in args:
+			announcement += word
+			announcement += ' '	
+		await client.send_message(client.get_channel('517735735118528515'), announcement)	
+	else:
+		return
+
+
+
+
+@client.command(pass_context=True)
 async def load(ctx, extension):
 	if ctx.message.author.id  == '424221454490402816':
 		try:
