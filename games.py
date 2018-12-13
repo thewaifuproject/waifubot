@@ -118,10 +118,10 @@ class games:
 			already_playing.append(player1.id) 
 			already_playing.append(player2.id)	
 		
-			await client.say(intro)	
+			await self.client.say(intro)	
 			
-			task1 = asyncio.ensure_future(winz(player1, player2))
-			task2 = asyncio.ensure_future(winz(player2, player1))
+			task1 = asyncio.ensure_future(self.winz(player1, player2))
+			task2 = asyncio.ensure_future(self.winz(player2, player1))
 			
 			
 			m1 = await task1
@@ -156,7 +156,7 @@ class games:
 			await self.client.say(">%s uses %s\n" % (player2, m2.content))
 			
 		
-			win = winner(m1.content, m2.content, player1, player2)
+			win = self.winner(m1.content, m2.content, player1, player2)
 			await self.client.say(win)
 			
 			already_playing.remove(player1.id) 

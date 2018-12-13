@@ -34,7 +34,7 @@ class music:
 	async def play(self, ctx, url):
 		server = ctx.message.server
 		voice_client = self.client.voice_client_in(server)
-		player = await voice_client.create_ytdl_player(url, after=lambda: check_queue(server.id))
+		player = await voice_client.create_ytdl_player(url, after=lambda: self.check_queue(server.id))
 		players[server.id] = player
 		player.start()
 		
@@ -63,7 +63,7 @@ class music:
 		server = ctx.message.server
 		voice_client = self.client.voice_client_in(server)
 		#it assumes bot is already in a voice channel, if not, boom it goes ripperino
-		player = await voice_client.create_ytdl_player(url, after=lambda: check_queue(server.id))
+		player = await voice_client.create_ytdl_player(url, after=lambda: self.check_queue(server.id))
 		
 		if server.id in queues:
 			queues[server.id].append(player)

@@ -50,7 +50,7 @@ class love:
 									else:
 										return  "`>%s love` \n Thats a beautiful number, but more beautiful is %s, you should forget about %s and come with me :kissing_smiling_eyes:  " % (love, p2, p1)						
 								else:
-									return "`>%s love` \nAight, if this was a 'love exam', you would have passed, too bad it aint, so lemme do this: \n `>49.99 love.` \n @%s tell @%s to stop crying." % (love, p1, p2)
+									return "`>%s love` \nAight, if this was a 'love exam', you would have passed, too bad it aint, so lemme do this: \n `>49.99 love` \n %s tell %s to stop crying." % (love, p1, p2)
 							else:
 								return "`>%s love` \nHeeey, that was close to 50! Maybe we can work something out, you two would look so cute together." % (love)
 						else:
@@ -70,7 +70,7 @@ class love:
 			await self.client.say("That is just same as masturbating... Sad.")
 		else:
 			love = random.randint(0, 100)
-			msg = lovez(user1, user2, love)
+			msg = self.lovez(user1, user2, love)
 			await self.client.say(msg)
 			
 	@commands.command(pass_context=True)
@@ -78,8 +78,8 @@ class love:
 		if (user1 == user2):
 			await self.client.say("That is just same as masturbating... Sad.")
 		else:
-			love = pairStrenght(user1, user2)
-			msg = lovez(user1, user2, love)
+			love = self.pairStrenght(user1, user2)
+			msg = self.lovez(user1, user2, love)
 			await self.client.say(msg)
 			
 	

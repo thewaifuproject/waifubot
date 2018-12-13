@@ -144,14 +144,6 @@ class trivia:
 		channel_used_waifufromwhatanimu[channel.id] = False
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
 def setup(client):
 	client.add_cog(trivia(client))
 	
