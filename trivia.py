@@ -63,7 +63,7 @@ class trivia:
 				m = await self.client.wait_for_message(channel=channel, timeout=1)
 				print("pepe")
 				if time.time()>=(start+60):
-					await self.client.say("Oops! Nobody got it right. You should know the name of the waifu is %s." % (waifuName))
+					await self.client.say("Oops! Nobody got it right. The name of the waifu is %s." % (waifuName))
 					channel_used_whoisthiswaifu[channel.id] = False
 					return
 				if m is None:
@@ -127,7 +127,7 @@ class trivia:
 				m = await self.client.wait_for_message(channel=channel, timeout=1)
 				print("pepe")
 				if time.time()>=(start+60):
-					await self.client.say("Oops! Nobody got it right. You should know the name of the animu is %s." % (animeName))
+					await self.client.say("Oops! Nobody got it right. The name of the animu is %s." % (animeName))
 					channel_used_waifufromwhatanimu[channel.id] = False
 					return
 				if m is None:
