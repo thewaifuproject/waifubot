@@ -36,7 +36,7 @@ class misc:
 		
 	@commands.command()
 	async def ping(self):
-		await self.client.say('Uhhhh, *pong* I guess...')
+		await self.client.say('Uhhh, *pong* I guess... ')
 		
 	#await client.send_message(message.channel, "%a" % (args[1]))
 	#takes the first word the user said
