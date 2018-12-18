@@ -27,10 +27,10 @@ class misc:
 		if message.content.upper().startswith("PLS AMIBETATESTER?"):
 			if "517740341907030026" in [role.id for role in message.author.roles]:
 				await self.client.send_message(message.channel, "Yes, you are. Yaay~")
-				if "514522377565241345" in [role.id for role in message.author.roles]:
-					await self.client.send_message(message.channel, "But you should be creating more content, pretty please?")
+			if "523211588870602753" in [role.id for role in message.author.roles]:
+				await self.client.send_message(message.channel, "You are a dev, you should be creating more content. Uhhh... pretty please?")
 			else:
-				await self.client.send_message(message.channel, "You don't, thats too bad. Go get a waifu at WaifuChain.moe to enter the beta test. Easy, right?")
+				await self.client.send_message(message.channel, "You are not, thats too bad. Go get a waifu at `WaifuChain.moe` to enter the beta test. Easy, right?")
 	#As .event has priority over .commands, this lines allows the bot to search for cmds if they ain't in .event
 	#await self.client.process_commands(message)
 		

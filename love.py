@@ -65,7 +65,7 @@ class love:
 			return "`>%s love` \n Both %s and %s are really effed." % (love, p1, p2)
 	
 	@commands.command(pass_context=True)
-	async def ranship(self, ctx, user1 : str, user2 : str):
+	async def fakeship(self, ctx, user1 : str, user2 : str):
 		if (user1 == user2):
 			await self.client.say("That is just same as masturbating... Sad.")
 		else:

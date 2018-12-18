@@ -34,9 +34,6 @@ async def announcement(ctx, *args):
 	else:
 		return
 
-
-
-
 @client.command(pass_context=True)
 async def load(ctx, extension):
 	if ctx.message.author.id  == '424221454490402816':
