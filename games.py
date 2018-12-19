@@ -254,7 +254,10 @@ class games:
 		await self.client.say("**%s** has challenged **%s** to play a game of *CONNECT 4*.\n**%s** do you accept the invitation? `y/n`" % (p1, p2, p2))
 			
 		m = await self.client.wait_for_message(author=p2, timeout=30)
-			
+                
+                if m == None:
+			await self.client.say("Timed out.")
+			return False
 		if m.content == 'y':
 			await self.client.say("**STARTING GAME**")
 			return True
